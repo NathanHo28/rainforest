@@ -2,10 +2,12 @@
 <%= link_to "New Product", "/products/new" %>
 
 <% @products.each do |product| %>
-  <p><%= product.name %>, <%= product.price_in_cents %>:</p><br />
+  <p><%= product.name %>, $<%= product.formatted_price %>:</p>
   <%= product.description %>
   <%= link_to "View product", product_path(product) %>
+  <br />
 <% end %>
+
 
 
 

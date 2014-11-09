@@ -1,0 +1,30 @@
+<!Doctype html>
+
+<html>
+	<head>
+		<meta>
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="/stylesheet.css" />
+	</head>
+	<body>
+		<header>Rainforest</header>
+		<nav>
+			<ul>
+					<li><a href="/">HOME</a></li>
+					<li>
+						<%= link_to "All Products", products_url %><span class="products"</span>
+						<div>
+							<ul>
+								<li><a href="/contacts">All Products</a></li>
+								<li><%= link_to "New Product", "/products/new" %></li>
+							</ul>
+						</div>
+					</li>
+					<li><a href="/help">HELP</a></li>
+				</ul>
+		</nav>
+		<main>
+			<%= yield %>
+		</main>
+	</body>
+</html>
