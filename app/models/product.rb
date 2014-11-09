@@ -7,4 +7,7 @@ class Product < ActiveRecord::Base
 		sprintf("%.2f", price_in_dollars) 	
 		# %.2f - precision for `f' is number of digits after the decimal point 
 	end
+
+	has_many :reviews
+	has_many :users, through: :reviews
 end
