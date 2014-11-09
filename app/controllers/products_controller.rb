@@ -1,20 +1,22 @@
 class ProductsController < ApplicationController
   def index
-  	@products = Product.all
+  	@product = Product.all
   end
 
   def show
-  	@products = Product.find(params[:id])
-
+  	@product = Product.find(params[:id])
+  	if current_user
+  		@review = @product.reviews.build
+  	end
   end
 
   def new
-  	@products = Product.new
+  	@product = Product.new
   end
 
   def create
-  	@products = Product.new(product_params)
-  	if @products.save
+  	@product = Product.new(product_params)
+  	if @product.save
   		redirect_to products_url
   	else
   		render :new
@@ -22,13 +24,13 @@ class ProductsController < ApplicationController
   end
 
   def edit
-  	@products = Product.find(params[:id])
+  	@product = Product.find(params[:id])
   end
 
   def update
-  	@products = Product.find(params[:id])
-  	if @products.update_attributes(product_params)
-  		redirect_to product_path(@products)
+  	@product = Product.find(params[:id])
+  	if @product.update_attributes(product_params)
+  		redirect_to product_path(@product)
   	else
   		render :edit
   	end
