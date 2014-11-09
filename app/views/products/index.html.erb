@@ -3,7 +3,7 @@
 
 <% @products.each do |product| %>
 <div>
-  <p><%= product.name %>, $<%= product.formatted_price %></p>
+  <p><strong><%= product.name %></strong>, $<%= product.formatted_price %></p>
   <p>Description: <%= product.description %></p>
   <p><%= link_to "View product", product_path(product) %></p>
 </div>
