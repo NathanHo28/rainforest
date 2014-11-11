@@ -1,6 +1,6 @@
 class ProductsController < ApplicationController
   def index
-  	@product = Product.all
+  	@products = Product.all.paginate(page: params[:page], per_page: 3)
   end
 
   def show
@@ -44,6 +44,6 @@ class ProductsController < ApplicationController
 
   private
   def product_params
-    params.require(:product).permit(:name, :description, :price_in_cents)
+    params.require(:product).permit(:name, :description, :price_in_cents, :url)
   end
 end

@@ -12,7 +12,7 @@
   <% end %>
 	<div class="field">
 		<%= f.label "name" %><br />
-		<%= f.text_field "name", :placeholder => "type your name" %>
+		<%= f.text_field "name", :placeholder => "type product name" %>
 	</div>
 	<div class="field">
 		<%= f.label "description" %><br />
@@ -20,7 +20,11 @@
 	</div>
 	<div class="field">
 		<%= f.label "price_in_cents" %><br />
-		<%= f.text_field "price_in_cents", :placeholder => "please provide price in cents" %>
+		<%= f.text_field "price_in_cents", :placeholder => "provide price in cents" %>
+	</div>
+	<div class="field">
+		<%= f.label "url" %><br />
+		<%= f.text_field "url", :placeholder => "ie. http://www.image.com/pic.jpg" %>
 	</div>
 	<div class="actions">
 		<%= f.submit "Save" %>

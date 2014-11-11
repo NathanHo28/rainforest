@@ -1,13 +1,16 @@
-<h1>Products (<%= @product.length %>)</h1>
+<h3>Products (<%= @products.length %>)</h3>
 <%= link_to "New Product", "/products/new" %>
 
-<% @product.each do |product| %>
-<div>
-  <p><strong><%= product.name %></strong>, $<%= product.formatted_price %></p>
-  <p>Description: <%= product.description %></p>
-  <p><%= link_to "View product", product_path(product) %></p>
-</div>
-<% end %>
+<%= will_paginate @products %>
+	<% @products.each do |product| %>
+		<div>
+		  <p><strong><%= product.name %></strong>, $<%= product.formatted_price %></p>
+		  <p>Description: <%= product.description %></p>
+		  <p><%= link_to image_tag("#{product.url}", size: "400x200"), "/products/#{product.id}" %></p>
+		  <p><%= link_to "View product", product_path(product) %></p>
+		</div>
+	<% end %>
+<%= will_paginate @products %>
 
 
 
