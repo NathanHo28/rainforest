@@ -12,7 +12,7 @@
       <ul>
           <li><a href="/">HOME</a></li>
           <li>
-            <%= link_to "All Products", products_url %><span class="products"</span>
+            <%= link_to "All Products", products_url %><span class="prod"</span>
             <div>
               <ul>
                 <li><%= link_to "All Products", products_url %></li>
@@ -35,7 +35,7 @@
 
   <p class="userinfo">
       <% if current_user %>
-        Signed in as <%= current_user.name %>. <%= link_to "Log out", session_path("current"), :method => :delete %>
+        Signed in as <%= link_to current_user.name, current_user %>. <%= link_to "Log out", session_path("current"), :method => :delete %>
       <% else %>
         <%= link_to "Log in", new_session_path %> or <%= link_to "Sign up", new_user_path %>
       <% end %>

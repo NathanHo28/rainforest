@@ -3,10 +3,10 @@
 
 <%= will_paginate @products %>
 	<% @products.each do |product| %>
-		<div>
-		  <p><strong><%= product.name %></strong>, $<%= product.formatted_price %></p>
-		  <p>Description: <%= product.description %></p>
-		  <p><%= link_to image_tag("#{product.url}", size: "400x200"), "/products/#{product.id}" %></p>
+		<div class="products">
+		  <p><strong><%= product.name %>:</strong> $<%= product.formatted_price %></p>
+		  <p class="description"><strong>Description:</strong> <%= product.description %></p>
+		  <p class="image"><%= link_to image_tag("#{product.url}", size: "400x200"), "/products/#{product.id}" %></p>
 		  <p><%= link_to "View product", product_path(product) %></p>
 		</div>
 	<% end %>
