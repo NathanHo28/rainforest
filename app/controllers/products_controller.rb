@@ -32,8 +32,8 @@ class ProductsController < ApplicationController
   	if @product.update_attributes(product_params)
   		redirect_to product_path(@product)
   	else
-  		render :edit
-  	end
+  		render :edit  
+    end
   end
 
   def destroy
